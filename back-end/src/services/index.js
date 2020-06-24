@@ -1,4 +1,4 @@
-import Facebook from './Facebook';
+import Facebook from './auth/Facebook';
 
 export const AuthProvider = {
     Facebook

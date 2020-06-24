@@ -6,6 +6,7 @@ import OnboardingLogo from '../components/OnboardingLogo';
 import LoginButton from '../components/LoginButton';
 
 import { images } from '../constants/images';
+import { GoogleApi } from '../api/Google';
 import { FacebookApi } from '../api/Facebook';
 
 class LoginScreen extends Component {
@@ -24,8 +25,14 @@ class LoginScreen extends Component {
         }).start();
     }
 
-    onGooglePress = () => {
-        Alert.alert('Google press');
+    onGooglePress = async () => {
+        try {
+            const token = await GoogleApi.loginAsync();
+
+            console.log(token);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     onFacebookPress = async () => {
