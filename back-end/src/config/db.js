@@ -5,6 +5,7 @@ import { DB_URL } from '../constants/index';
 mongoose.Promise = global.Promise;
 
 mongoose.set('debug', true);
+mongoose.set('useCreateIndex', true);
 
 try {
     mongoose.connect(DB_URL, {

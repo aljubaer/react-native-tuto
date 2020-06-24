@@ -7,7 +7,8 @@ const CustomerSchema = new Schema({
     lastName: String,
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     avaterUrl: String,
     provider: [
@@ -17,5 +18,7 @@ const CustomerSchema = new Schema({
         }
     ]
 }, { timestamps: true })
+
+CustomerSchema.index({ email: 1 });
 
 export default mongoose.model('Customer', CustomerSchema);

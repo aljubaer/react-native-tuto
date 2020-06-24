@@ -19,5 +19,5 @@ export const authAsync = async token => {
 };
 
 export const Facebook = {
-    authAsync: authAsync
+    authAsync
 };
